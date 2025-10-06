@@ -1,6 +1,6 @@
-import React from "react";
-import TopBar from "@/lib/components/TopBar";
-import Sidebar from "@/lib/components/Sidebar";
+import React from 'react'
+import TopBar from '@/lib/components/TopBar'
+import Sidebar from '@/lib/components/Sidebar'
 
 export default function AppLayout({
   children,
@@ -13,5 +13,5 @@ export default function AppLayout({
         <div className="h-full w-full overflow-auto p-4">{children}</div>
       </div>
     </main>
-  );
+  )
 }

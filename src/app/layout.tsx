@@ -1,20 +1,20 @@
-import "@/styles/globals.css";
+import '@/styles/globals.css'
 
-import { type Metadata } from "next";
-import getHypertune from "@/lib/getHypertune";
-import { HypertuneProvider } from "@/generated/hypertune.react";
+import { type Metadata } from 'next'
+import getHypertune from '@/lib/getHypertune'
+import { HypertuneProvider } from '@/generated/hypertune.react'
 
 export const metadata: Metadata = {
-  title: "Potion",
-};
+  title: 'Potion',
+}
 
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const hypertune = await getHypertune();
+  const hypertune = await getHypertune()
 
-  const serverDehydratedState = hypertune.dehydrate();
-  const serverRootArgs = hypertune.getRootArgs();
+  const serverDehydratedState = hypertune.dehydrate()
+  const serverRootArgs = hypertune.getRootArgs()
 
   return (
     <HypertuneProvider
@@ -28,5 +28,5 @@ export default async function RootLayout({
         <body>{children}</body>
       </html>
     </HypertuneProvider>
-  );
+  )
 }

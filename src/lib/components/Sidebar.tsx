@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Desktop,
@@ -7,40 +7,40 @@ import {
   Folder,
   PaperPlaneTilt,
   User,
-} from "@phosphor-icons/react";
-import Link from "next/link";
-import { useMemo } from "react";
-import twMerge from "@/lib/twMerge";
-import { usePathname } from "next/navigation";
+} from '@phosphor-icons/react'
+import Link from 'next/link'
+import { useMemo } from 'react'
+import twMerge from '@/lib/twMerge'
+import { usePathname } from 'next/navigation'
 
 const routes: SidebarItemProps[] = [
   {
-    name: "Home",
+    name: 'Home',
     icon: <Desktop />,
-    href: "/app",
+    href: '/app',
   },
   {
-    name: "Projects",
+    name: 'Projects',
     icon: <Folder />,
-    href: "/app/projects",
+    href: '/app/projects',
   },
   {
-    name: "Team",
+    name: 'Team',
     icon: <User />,
-    href: "/app/team",
+    href: '/app/team',
   },
   {
-    name: "Plans",
+    name: 'Plans',
     icon: <PaperPlaneTilt />,
-    href: "/app/plans",
+    href: '/app/plans',
   },
-];
+]
 
 type SidebarItemProps = {
-  name: string;
-  icon: React.ReactNode;
-  href: string;
-};
+  name: string
+  icon: React.ReactNode
+  href: string
+}
 
 export default function Sidebar(): React.ReactElement | null {
   return (
@@ -49,7 +49,7 @@ export default function Sidebar(): React.ReactElement | null {
         <SidebarItem key={`sidebar-${props.name}`} {...props} />
       ))}
     </div>
-  );
+  )
 }
 
 function SidebarItem({
@@ -57,27 +57,27 @@ function SidebarItem({
   icon,
   href,
 }: SidebarItemProps): React.ReactElement | null {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
-  const isSelected = useMemo(() => pathname === href, [pathname, href]);
+  const isSelected = useMemo(() => pathname === href, [pathname, href])
   const iconProps: IconProps = useMemo(
     () =>
       isSelected
-        ? { weight: "fill", size: 16 }
-        : { weight: "duotone", size: 16, color: "#7A8396" },
-    [isSelected],
-  );
+        ? { weight: 'fill', size: 16 }
+        : { weight: 'duotone', size: 16, color: '#7A8396' },
+    [isSelected]
+  )
   return (
     <Link
       className={twMerge(
-        "flex flex-row items-center gap-2 rounded-lg p-2 text-h5 hover:bg-bg-hover",
+        'flex flex-row items-center gap-2 rounded-lg p-2 text-h5 hover:bg-bg-hover',
         isSelected &&
-          "bg-intent-primary/5 text-intent-primary hover:bg-bg-hover/10",
+          'bg-intent-primary/5 text-intent-primary hover:bg-bg-hover/10'
       )}
       href={href}
     >
       <IconContext.Provider value={iconProps}>{icon}</IconContext.Provider>
       {name}
     </Link>
-  );
+  )
 }

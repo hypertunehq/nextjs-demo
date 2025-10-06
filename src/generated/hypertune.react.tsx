@@ -21,7 +21,12 @@ export function HypertuneProvider({
   children: React.ReactNode;
 }): React.ReactElement {
   return (
-    <HypertuneSourceProvider createSourceOptions={createSourceOptions}>
+    <HypertuneSourceProvider
+      createSourceOptions={{
+        ...createSourceOptions,
+        ...(dehydratedState ?? {}),
+      }}
+    >
       <HypertuneHydrator dehydratedState={dehydratedState}>
         <HypertuneRootProvider rootArgs={rootArgs}>
           {children}
@@ -35,8 +40,11 @@ export function HypertuneProvider({
 
 const HypertuneSourceContext = React.createContext<{
   hypertuneSource: hypertune.SourceNode;
-  stateHash: string | null;
-}>({ hypertuneSource: hypertune.emptySource, stateHash: null });
+  setOverride: (newOverride: sdk.DeepPartial<hypertune.Source> | null) => void;
+}>({
+  hypertuneSource: hypertune.emptySource,
+  setOverride: () => { /* noop */ },
+});
 
 export function HypertuneSourceProvider({
   createSourceOptions,
@@ -45,21 +53,14 @@ export function HypertuneSourceProvider({
   createSourceOptions: hypertune.CreateSourceOptions;
   children: React.ReactNode;
 }): React.ReactElement {
-  const hypertuneSource = React.useMemo(
-    () =>
-      hypertune.createSource({
-        initDataProvider: typeof window === "undefined" ? null : undefined,
-        remoteLogging: {
-          mode: typeof window === "undefined" ? "off" : undefined
-        },
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        localLogger: typeof window === "undefined" ? () => {} : undefined,
-        ...createSourceOptions,
-      }),
-    // Don't recreate the source even if createSourceOptions changes
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  const hypertuneSource = hypertune.createSource({
+    key: typeof window === "undefined" ? "ssr" : "client",
+    initDataProvider: typeof window === "undefined" ? null : undefined,
+    remoteLogging: { mode: typeof window === "undefined" ? "off" : undefined },
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    localLogger: typeof window === "undefined" ? () => {} : undefined,
+    ...createSourceOptions,
+  });
 
   const [stateHash, setStateHash] = React.useState(
     hypertuneSource.getStateHash()
@@ -73,19 +74,38 @@ export function HypertuneSourceProvider({
       setStateHash(newStateHash); // Re-render
 
       if (!metadata.becameReady) {
-        // Only refresh the page if the sdk was ready before this update
+        // Only refresh the page if the SDK was ready before this update
         router.refresh();
       }
-    }
+    };
     hypertuneSource.addUpdateListener(updateListener);
     return () => {
       hypertuneSource.removeUpdateListener(updateListener);
     };
   }, [hypertuneSource, router]);
 
+  const hypertuneSourceForStateHash = React.useMemo(() => {
+    const { context } = hypertuneSource.props;
+    const newProps = {
+      ...hypertuneSource.props,
+      stateHash,
+      initDataHash: context?.initData?.hash ?? null,
+      expression: context?.initData?.reducedExpression ?? null,
+    };
+    return new hypertune.SourceNode(newProps);
+  }, [hypertuneSource, stateHash]);
+
+  const setOverride = React.useCallback(
+    (newOverride: sdk.DeepPartial<hypertune.Source> | null) => {
+      setOverrideCookie(newOverride);
+      router.refresh();
+    },
+    [router]
+  );
+
   const value = React.useMemo(
-    () => ({ hypertuneSource, stateHash }),
-    [hypertuneSource, stateHash]
+    () => ({ hypertuneSource: hypertuneSourceForStateHash, setOverride }),
+    [hypertuneSourceForStateHash, setOverride]
   );
 
   return (
@@ -100,17 +120,25 @@ export function useHypertuneSource(): hypertune.SourceNode {
   return hypertuneSource;
 }
 
+export function useSetOverride(): (newOverride: sdk.DeepPartial<hypertune.Source> | null) => void {
+  const { setOverride } = React.useContext(HypertuneSourceContext);
+  return setOverride;
+}
+
 // Hypertune Root
 
-const HypertuneRootContext = React.createContext(
-  new hypertune.RootNode({
-    context: null,
-    logger: null,
-    parent: null,
-    step: null,
-    expression: null,
-  })
-);
+const emptyRoot = new hypertune.RootNode({
+  context: null,
+  logger: null,
+  parent: null,
+  step: null,
+  expression: null,
+  initDataHash: null,
+});
+
+const HypertuneRootContext = React.createContext(emptyRoot);
+
+let hypertuneRootSingleton = emptyRoot;
 
 export function HypertuneRootProvider({
   rootArgs,
@@ -121,7 +149,16 @@ export function HypertuneRootProvider({
 }): React.ReactElement {
   const hypertuneSource = useHypertuneSource();
 
-  const hypertuneRoot = hypertuneSource.root({ args: rootArgs });
+  const rootArgsKey = sdk.stableStringify(rootArgs);
+
+  const hypertuneRoot = React.useMemo(
+    () => {
+      const value = hypertuneSource.root({ args: rootArgs });
+      hypertuneRootSingleton = value;
+      return value;
+    },
+    [hypertuneSource, rootArgsKey]
+  );
 
   return (
     <HypertuneRootContext.Provider value={hypertuneRoot}>
@@ -131,21 +168,28 @@ export function HypertuneRootProvider({
 }
 
 export function useHypertune(): hypertune.RootNode {
-  const hypertuneRoot = React.useContext(HypertuneRootContext)
-  
+  const hypertuneRoot = React.useContext(HypertuneRootContext);
+
   if (!hypertuneRoot.props.context) {
-    console.warn("[Hypertune] Calling `useHypertune` hook outside of the `HypertuneProvider`. Fallback values will be used.")
+    console.warn(
+      "[Hypertune] Calling `useHypertune` hook outside of the `HypertuneProvider`. Fallback values will be used."
+    );
   }
   return hypertuneRoot;
 }
 
+/**
+ * Use this function if you need to use Hypertune outside of React
+ */
+export function getHypertuneSingleton(): hypertune.RootNode {
+  return hypertuneRootSingleton;
+}
+
 export function HypertuneHydrator({
   dehydratedState,
-  rootArgs,
   children,
 }: {
   dehydratedState?: hypertune.DehydratedState | null;
-  rootArgs?: hypertune.RootArgs;
   children: React.ReactElement | null;
 }): React.ReactElement | null {
   const hypertuneSource = useHypertuneSource();
@@ -154,35 +198,35 @@ export function HypertuneHydrator({
     hypertuneSource.hydrate(dehydratedState);
   }
 
-  if (rootArgs) {
-    return (
-      <HypertuneRootProvider rootArgs={rootArgs}>
-        {children}
-      </HypertuneRootProvider>
-    );
-  }
-
   return children;
 }
 
 export function HypertuneClientLogger({
   flagPaths,
 }: {
-  flagPaths: hypertune.FlagPaths[];
+  flagPaths: hypertune.FlagPath[];
 }): null {
   const hypertuneRoot = useHypertune();
-  const isReady = hypertuneRoot.isReady()
+  const isReady = hypertuneRoot.isReady();
 
   React.useEffect(() => {
     if (!isReady) {
       return;
     }
     hypertuneRoot.getFlagValues({
-      flagFallbacks: hypertune.flagFallbacks, 
+      flagFallbacks: hypertune.flagFallbacks,
       flagPaths,
-    })
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isReady])
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isReady]);
 
-  return null
+  return null;
+}
+
+function setOverrideCookie(newOverride: any): void {
+  const d = new Date();
+  d.setTime(d.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days
+  let expires = "expires=" + d.toUTCString();
+
+  document.cookie = `${hypertune.overrideCookieName}=${JSON.stringify(newOverride)};${expires};path=/`;
 }

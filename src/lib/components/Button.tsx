@@ -1,16 +1,16 @@
-import React from "react";
-import { Intent } from "@/lib/intent";
-import twMerge from "@/lib/twMerge";
+import React from 'react'
+import { Intent } from '@/lib/intent'
+import twMerge from '@/lib/twMerge'
 
 export type Size =
-  | "x-small"
-  | "small"
-  | "default"
-  | "large"
-  | "x-large"
-  | "2x-large";
+  | 'x-small'
+  | 'small'
+  | 'default'
+  | 'large'
+  | 'x-large'
+  | '2x-large'
 
-export type Weight = "default" | "minimal" | "filled" | "outlined" | "elevated";
+export type Weight = 'default' | 'minimal' | 'filled' | 'outlined' | 'elevated'
 
 /* The existing Button is primarily used for the logic UI
  * editor. IconButton is primarily aimed everywhere else,
@@ -21,25 +21,25 @@ export default function Button({
   title,
   icon,
   iconEnd,
-  intent = "neutral",
-  weight = "default",
-  size = "default",
+  intent = 'neutral',
+  weight = 'default',
+  size = 'default',
   disabled,
   onClick,
   className,
 }: {
-  text?: string;
-  title?: string;
-  icon?: React.ReactNode;
-  iconEnd?: React.ReactNode;
-  intent?: Intent;
-  weight?: Weight;
-  size?: Size;
-  disabled?: boolean;
-  onClick?: () => void;
-  className?: string;
+  text?: string
+  title?: string
+  icon?: React.ReactNode
+  iconEnd?: React.ReactNode
+  intent?: Intent
+  weight?: Weight
+  size?: Size
+  disabled?: boolean
+  onClick?: () => void
+  className?: string
 }): React.ReactElement {
-  const isDisabled = disabled;
+  const isDisabled = disabled
 
   return (
     <button
@@ -48,19 +48,15 @@ export default function Button({
       onClick={
         !isDisabled && onClick
           ? (event) => {
-              event.stopPropagation();
-              onClick();
+              event.stopPropagation()
+              onClick()
             }
           : undefined
       }
       type="button"
       className={twMerge(
-        `flex select-none items-center justify-center text-base font-medium leading-3
-      ${isDisabled ? "cursor-default opacity-50" : "cursor-pointer"} 
-      ${intentAndWeightClassName[intent][weight]}
-      ${sizeToClassName(size)}
-      ${sizeToGap(size)}`,
-        className ?? ""
+        `flex select-none items-center justify-center text-base font-medium leading-3 ${isDisabled ? 'cursor-default opacity-50' : 'cursor-pointer'} ${intentAndWeightClassName[intent][weight]} ${sizeToClassName(size)} ${sizeToGap(size)}`,
+        className ?? ''
       )}
     >
       <div className={`flex items-center justify-center ${sizeToGap(size)}`}>
@@ -70,40 +66,40 @@ export default function Button({
 
       {iconEnd && <span>{iconEnd}</span>}
     </button>
-  );
+  )
 }
 
 function sizeToGap(size: Size): string {
   switch (size) {
-    case "x-small":
-      return "gap-[4px]";
-    case "small":
-      return "gap-[5px]";
-    case "large":
-      return "gap-[7px]";
-    case "x-large":
-      return "gap-[9px]";
-    case "2x-large":
-      return "gap-[9px]";
+    case 'x-small':
+      return 'gap-[4px]'
+    case 'small':
+      return 'gap-[5px]'
+    case 'large':
+      return 'gap-[7px]'
+    case 'x-large':
+      return 'gap-[9px]'
+    case '2x-large':
+      return 'gap-[9px]'
     default:
-      return "gap-[5px]";
+      return 'gap-[5px]'
   }
 }
 
 function sizeToClassName(size: Size): string {
   switch (size) {
-    case "x-small":
-      return "h-[20px] px-[3px] py-[4px] rounded-md";
-    case "small":
-      return "h-[26px] px-[10px] py-[7px] rounded-lg ";
-    case "large":
-      return "h-[32px] px-[8px] py-[8px] rounded-lg";
-    case "x-large":
-      return "h-[36px] px-[9px] py-[8px] rounded-lg";
-    case "2x-large":
-      return "h-[40px] px-[9px] py-[8px] rounded-lg";
+    case 'x-small':
+      return 'h-[20px] px-[3px] py-[4px] rounded-md'
+    case 'small':
+      return 'h-[26px] px-[10px] py-[7px] rounded-lg '
+    case 'large':
+      return 'h-[32px] px-[8px] py-[8px] rounded-lg'
+    case 'x-large':
+      return 'h-[36px] px-[9px] py-[8px] rounded-lg'
+    case '2x-large':
+      return 'h-[40px] px-[9px] py-[8px] rounded-lg'
     default:
-      return "h-[30px] px-[7px] py-[7px] rounded-lg";
+      return 'h-[30px] px-[7px] py-[7px] rounded-lg'
   }
 }
 
@@ -173,4 +169,4 @@ const intentAndWeightClassName = {
       border border-intent-success/20
       shadow-button`,
   },
-};
+}

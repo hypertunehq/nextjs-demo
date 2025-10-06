@@ -1,8 +1,7 @@
-import AIMessageLauncher from "@/lib/components/AIMessageLauncher";
-import OnboardingChecklist from "@/lib/components/OnboardingChecklist";
+import AIMessageLauncher from '@/lib/components/AIMessageLauncher'
+import OnboardingChecklist from '@/lib/components/OnboardingChecklist'
 
 export default async function AppHomePage() {
-
   return (
     <div className="flex flex-col gap-3">
       <OnboardingChecklist />
@@ -10,5 +9,5 @@ export default async function AppHomePage() {
         <AIMessageLauncher />
       </div>
     </div>
-  );
+  )
 }

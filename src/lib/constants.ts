@@ -1,1 +1,1 @@
-export const intentPrimaryHex = "#3B82F6";
+export const intentPrimaryHex = '#3B82F6'

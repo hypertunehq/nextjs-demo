@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.next
+out
+build
+dist
+
+# Generated files
+src/generated
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Other
+.git
+.vercel
+coverage
+
+
+
+

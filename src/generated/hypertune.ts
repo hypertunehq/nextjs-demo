@@ -2,16 +2,14 @@
 
 import * as sdk from "hypertune";
 
-export const queryId = "4af326bb-2430-486d-9e6c-a6df5a994d2c";
+export const queryId = "1d2105d4-4c3e-56e8-99db-28166b6fb792";
 
-export const query: sdk.Query<sdk.ObjectValueWithVariables> = {"variableDefinitions":{},"fragmentDefinitions":{"OpenAIPromptMessages":{"type":"InlineFragment","objectTypeName":"OpenAIPromptMessages","selection":{"content":{"fieldArguments":{},"fieldQuery":null},"role":{"fieldArguments":{},"fieldQuery":null},"name":{"fieldArguments":{},"fieldQuery":null}}},"NullableFloat":{"type":"InlineFragment","objectTypeName":"NullableFloat","selection":{"value":{"fieldArguments":{},"fieldQuery":null},"isNull":{"fieldArguments":{},"fieldQuery":null}}},"OpenAIPrompt":{"type":"InlineFragment","objectTypeName":"OpenAIPrompt","selection":{"model":{"fieldArguments":{},"fieldQuery":null},"messages":{"fieldArguments":{},"fieldQuery":{"OpenAIPromptMessages":{"type":"FragmentSpread","fragmentName":"OpenAIPromptMessages"}}},"temperature":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"topP":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"topLogprobs":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"presencePenalty":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"maxTokens":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"maxCompletionTokens":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}}}},"AI":{"type":"InlineFragment","objectTypeName":"AI","selection":{"loadingMessage":{"fieldArguments":{},"fieldQuery":null},"featureSuggestionPrompt":{"fieldArguments":{},"fieldQuery":{"OpenAIPrompt":{"type":"FragmentSpread","fragmentName":"OpenAIPrompt"}}}}},"Landing":{"type":"InlineFragment","objectTypeName":"Landing","selection":{"headline":{"fieldArguments":{},"fieldQuery":null},"layout":{"fieldArguments":{},"fieldQuery":null}}},"Events":{"type":"InlineFragment","objectTypeName":"Events","selection":{"thumbsDown":{"fieldArguments":{},"fieldQuery":null},"thumbsUp":{"fieldArguments":{},"fieldQuery":null},"pageView":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null},"signUp":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null},"upgrade":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null}}},"Discount":{"type":"InlineFragment","objectTypeName":"Discount","selection":{"name":{"fieldArguments":{},"fieldQuery":null},"isEnabled":{"fieldArguments":{},"fieldQuery":null},"percentage":{"fieldArguments":{},"fieldQuery":null}}},"PlanData":{"type":"InlineFragment","objectTypeName":"PlanData","selection":{"enabled":{"fieldArguments":{},"fieldQuery":null},"text":{"fieldArguments":{},"fieldQuery":null}}},"Feature":{"type":"InlineFragment","objectTypeName":"Feature","selection":{"name":{"fieldArguments":{},"fieldQuery":null},"planData":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":{"PlanData":{"type":"FragmentSpread","fragmentName":"PlanData"}}}}},"FeatureGroup":{"type":"InlineFragment","objectTypeName":"FeatureGroup","selection":{"name":{"fieldArguments":{},"fieldQuery":null},"feature":{"fieldArguments":{},"fieldQuery":{"Feature":{"type":"FragmentSpread","fragmentName":"Feature"}}}}}},"fieldQuery":{"Query":{"type":"InlineFragment","objectTypeName":"Query","selection":{"root":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":{"Root":{"type":"InlineFragment","objectTypeName":"Root","selection":{"ai":{"fieldArguments":{},"fieldQuery":{"AI":{"type":"FragmentSpread","fragmentName":"AI"}}},"landing":{"fieldArguments":{},"fieldQuery":{"Landing":{"type":"FragmentSpread","fragmentName":"Landing"}}},"events":{"fieldArguments":{},"fieldQuery":{"Events":{"type":"FragmentSpread","fragmentName":"Events"}}},"discounts":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":{"Discount":{"type":"FragmentSpread","fragmentName":"Discount"}}},"price":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null},"featureGrid":{"fieldArguments":{},"fieldQuery":{"FeatureGroup":{"type":"FragmentSpread","fragmentName":"FeatureGroup"}}}}}}}}}}};
-  
-/**
- * @deprecated use '@vercel/flags/providers/hypertune' package instead.
- */
-export const vercelFlagDefinitions = {"ai.loadingMessage":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EloadingMessage"},"ai.featureSuggestionPrompt.model":{"options":[{"value":"gpt_4o","label":"Gpt 4o"},{"value":"gpt_4o_mini","label":"Gpt 4o Mini"},{"value":"gpt_3_5_turbo","label":"Gpt 3 5 Turbo"}],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3Emodel"},"ai.featureSuggestionPrompt.temperature.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.temperature.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.topP.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.topP.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.topLogprobs.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.topLogprobs.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.presencePenalty.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.presencePenalty.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.maxTokens.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.maxTokens.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.maxCompletionTokens.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.maxCompletionTokens.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"landing.headline":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding%3Eheadline"},"landing.layout":{"options":[{"value":"vertical","label":"Vertical"},{"value":"horizontal","label":"Horizontal"}],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding%3Elayout"}};
+export const query: sdk.Query<sdk.ObjectValueWithVariables> = {"variableDefinitions":{},"fragmentDefinitions":{"OpenAIPromptMessages":{"type":"InlineFragment","objectTypeName":"OpenAIPromptMessages","selection":{"content":{"fieldArguments":{},"fieldQuery":null},"role":{"fieldArguments":{},"fieldQuery":null},"name":{"fieldArguments":{},"fieldQuery":null}}},"NullableFloat":{"type":"InlineFragment","objectTypeName":"NullableFloat","selection":{"value":{"fieldArguments":{},"fieldQuery":null},"isNull":{"fieldArguments":{},"fieldQuery":null}}},"OpenAIPrompt":{"type":"InlineFragment","objectTypeName":"OpenAIPrompt","selection":{"model":{"fieldArguments":{},"fieldQuery":null},"messages":{"fieldArguments":{},"fieldQuery":{"OpenAIPromptMessages":{"type":"FragmentSpread","fragmentName":"OpenAIPromptMessages"}}},"temperature":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"topP":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"topLogprobs":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"presencePenalty":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"maxTokens":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}},"maxCompletionTokens":{"fieldArguments":{},"fieldQuery":{"NullableFloat":{"type":"FragmentSpread","fragmentName":"NullableFloat"}}}}},"AI":{"type":"InlineFragment","objectTypeName":"AI","selection":{"loadingMessage":{"fieldArguments":{},"fieldQuery":null},"featureSuggestionPrompt":{"fieldArguments":{},"fieldQuery":{"OpenAIPrompt":{"type":"FragmentSpread","fragmentName":"OpenAIPrompt"}}}}},"Landing":{"type":"InlineFragment","objectTypeName":"Landing","selection":{"headline":{"fieldArguments":{},"fieldQuery":null},"layout":{"fieldArguments":{},"fieldQuery":null}}},"Events":{"type":"InlineFragment","objectTypeName":"Events","selection":{"thumbsDown":{"fieldArguments":{},"fieldQuery":null},"thumbsUp":{"fieldArguments":{},"fieldQuery":null},"pageView":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null},"signUp":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null},"upgrade":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null}}},"Discount":{"type":"InlineFragment","objectTypeName":"Discount","selection":{"name":{"fieldArguments":{},"fieldQuery":null},"isEnabled":{"fieldArguments":{},"fieldQuery":null},"percentage":{"fieldArguments":{},"fieldQuery":null}}},"PlanData":{"type":"InlineFragment","objectTypeName":"PlanData","selection":{"enabled":{"fieldArguments":{},"fieldQuery":null},"text":{"fieldArguments":{},"fieldQuery":null}}},"Feature":{"type":"InlineFragment","objectTypeName":"Feature","selection":{"name":{"fieldArguments":{},"fieldQuery":null},"planData":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":{"PlanData":{"type":"FragmentSpread","fragmentName":"PlanData"}}}}},"FeatureGroup":{"type":"InlineFragment","objectTypeName":"FeatureGroup","selection":{"name":{"fieldArguments":{},"fieldQuery":null},"feature":{"fieldArguments":{},"fieldQuery":{"Feature":{"type":"FragmentSpread","fragmentName":"Feature"}}}}}},"fieldQuery":{"Query":{"type":"InlineFragment","objectTypeName":"Query","selection":{"root":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":{"Root":{"type":"InlineFragment","objectTypeName":"Root","selection":{"testFlag":{"fieldArguments":{},"fieldQuery":null},"ai":{"fieldArguments":{},"fieldQuery":{"AI":{"type":"FragmentSpread","fragmentName":"AI"}}},"landing":{"fieldArguments":{},"fieldQuery":{"Landing":{"type":"FragmentSpread","fragmentName":"Landing"}}},"events":{"fieldArguments":{},"fieldQuery":{"Events":{"type":"FragmentSpread","fragmentName":"Events"}}},"discounts":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":{"Discount":{"type":"FragmentSpread","fragmentName":"Discount"}}},"price":{"fieldArguments":{"__isPartialObject__":true},"fieldQuery":null},"featureGrid":{"fieldArguments":{},"fieldQuery":{"FeatureGroup":{"type":"FragmentSpread","fragmentName":"FeatureGroup"}}}}}}}}}}};
+
+export const vercelFlagDefinitions = {"testFlag":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3EtestFlag"},"ai.loadingMessage":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EloadingMessage"},"ai.featureSuggestionPrompt.model":{"options":[{"value":"gpt_4o","label":"Gpt 4o"},{"value":"gpt_4o_mini","label":"Gpt 4o Mini"},{"value":"gpt_3_5_turbo","label":"Gpt 3 5 Turbo"}],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3Emodel"},"ai.featureSuggestionPrompt.temperature.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.temperature.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.topP.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.topP.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.topLogprobs.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.topLogprobs.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.presencePenalty.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.presencePenalty.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.maxTokens.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.maxTokens.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"ai.featureSuggestionPrompt.maxCompletionTokens.value":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D"},"ai.featureSuggestionPrompt.maxCompletionTokens.isNull":{"options":[{"label":"Off","value":false},{"label":"On","value":true}],"origin":"https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D"},"landing.headline":{"options":[],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding%3Eheadline"},"landing.layout":{"options":[{"value":"vertical","label":"Vertical"},{"value":"horizontal","label":"Horizontal"}],"origin":"https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding%3Elayout"}};
 
 export type FlagValues = {
+  "testFlag": boolean;
   "ai.loadingMessage": string;
   "ai.featureSuggestionPrompt.model": OpenAIModel;
   "ai.featureSuggestionPrompt.temperature.value": number;
@@ -30,9 +28,10 @@ export type FlagValues = {
   "landing.layout": Layout;
 }
 
-export type FlagPaths = keyof FlagValues & string;
+export type FlagPath = keyof FlagValues & string;
 
 export const flagFallbacks: FlagValues = {
+  "testFlag": false,
   "ai.loadingMessage": "",
   "ai.featureSuggestionPrompt.model": "gpt_4o",
   "ai.featureSuggestionPrompt.temperature.value": 0,
@@ -51,16 +50,14 @@ export const flagFallbacks: FlagValues = {
   "landing.layout": "vertical",
 }
 
-export function decodeFlagValues<TFlagPaths extends keyof FlagValues & string>(
-  encodedValues: string,
-  flagPaths: TFlagPaths[]
-): Pick<FlagValues, TFlagPaths> {
-  return sdk.decodeFlagValues({ flagPaths, encodedValues })
+export function decodeFlagValues<TFlagPath extends keyof FlagValues & string>(
+  encodedFlagValues: string,
+  flagPaths: TFlagPath[]
+): Pick<FlagValues, TFlagPath> {
+  return sdk.decodeFlagValues({ encodedFlagValues, flagPaths })
 }
 
-export type Rec = {
-
-}
+export type VariableValues = {};
 
 export const EnvironmentEnumValues = [
   "development",
@@ -77,7 +74,7 @@ export const CountryEnumValues = [
 ] as const;
 export type Country = typeof CountryEnumValues[number];
 
-export type Rec3 = {
+export type User = {
   id: string;
   name: string;
   email: string;
@@ -91,7 +88,7 @@ export const PlanTypeEnumValues = [
 ] as const;
 export type PlanType = typeof PlanTypeEnumValues[number];
 
-export type Rec4 = {
+export type Organization = {
   id: string;
   name: string;
   plan: PlanType;
@@ -104,15 +101,17 @@ export type Rec4 = {
  * You can define other custom input types with fields that are primitives, enums 
  * or other input types.
  */
-export type Rec2 = {
+export type Context = {
   environment: Environment;
-  user: Rec3;
-  organization: Rec4;
+  user: User;
+  organization: Organization;
 }
 
 export type RootArgs = {
-  context: Rec2;
+  context: Context;
 }
+
+export type EmptyObject = {};
 
 export const OpenAIModelEnumValues = [
   "gpt_4o",
@@ -192,14 +191,18 @@ export class OpenAIPromptMessagesNode extends sdk.Node {
   override typeName = "OpenAIPromptMessages" as const;
 
   get({ fallback = openAIPromptMessagesFallback as OpenAIPromptMessages}: { fallback?: OpenAIPromptMessages } = {}): OpenAIPromptMessages {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "ai", "AI", "featureSuggestionPrompt", "OpenAIPrompt", "messages"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as OpenAIPromptMessages;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22OpenAIPromptMessages%22%2C%22selectedChildName%22%3A%22content%22%7D})
    */
-  content({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  content({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("content", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -219,7 +222,7 @@ export class OpenAIPromptMessagesNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22OpenAIPromptMessages%22%2C%22selectedChildName%22%3A%22role%22%7D})
    */
-  role({ args = {}, fallback, shouldReturnUnrecognizedValues = false }: { args?: Rec; fallback: OpenAIPromtRole; shouldReturnUnrecognizedValues?: boolean; }): OpenAIPromtRole {
+  role({ args = {}, fallback, shouldReturnUnrecognizedValues = false }: { args?: EmptyObject; fallback: OpenAIPromtRole; shouldReturnUnrecognizedValues?: boolean; }): OpenAIPromtRole {
     const props0 = this.getFieldNodeProps("role", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -242,7 +245,7 @@ export class OpenAIPromptMessagesNode extends sdk.Node {
    * Optional name of the user.
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22OpenAIPromptMessages%22%2C%22selectedChildName%22%3A%22name%22%7D})
    */
-  name({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  name({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("name", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -271,14 +274,18 @@ export class NullableFloatNode extends sdk.Node {
   override typeName = "NullableFloat" as const;
 
   get({ fallback = nullableFloatFallback as NullableFloat}: { fallback?: NullableFloat } = {}): NullableFloat {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "ai", "AI", "featureSuggestionPrompt", "OpenAIPrompt", "temperature"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as NullableFloat;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22value%22%7D})
    */
-  value({ args = {}, fallback }: { args?: Rec; fallback: number; }): number {
+  value({ args = {}, fallback }: { args?: EmptyObject; fallback: number; }): number {
     const props0 = this.getFieldNodeProps("value", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -298,7 +305,7 @@ export class NullableFloatNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22NullableFloat%22%2C%22selectedChildName%22%3A%22isNull%22%7D})
    */
-  isNull({ args = {}, fallback }: { args?: Rec; fallback: boolean; }): boolean {
+  isNull({ args = {}, fallback }: { args?: EmptyObject; fallback: boolean; }): boolean {
     const props0 = this.getFieldNodeProps("isNull", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -333,14 +340,18 @@ export class OpenAIPromptNode extends sdk.Node {
   override typeName = "OpenAIPrompt" as const;
 
   get({ fallback = openAIPromptFallback as OpenAIPrompt}: { fallback?: OpenAIPrompt } = {}): OpenAIPrompt {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "ai", "AI", "featureSuggestionPrompt"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as OpenAIPrompt;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3Emodel})
    */
-  model({ args = {}, fallback, shouldReturnUnrecognizedValues = false }: { args?: Rec; fallback: OpenAIModel; shouldReturnUnrecognizedValues?: boolean; }): OpenAIModel {
+  model({ args = {}, fallback, shouldReturnUnrecognizedValues = false }: { args?: EmptyObject; fallback: OpenAIModel; shouldReturnUnrecognizedValues?: boolean; }): OpenAIModel {
     const props0 = this.getFieldNodeProps("model", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -362,7 +373,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3Emessages})
    */
-  messages({ args = {}, listFallbackLength = 0 }: { args?: Rec; listFallbackLength?: number; } = {}): OpenAIPromptMessagesNode[] {
+  messages({ args = {}, listFallbackLength = 0 }: { args?: EmptyObject; listFallbackLength?: number; } = {}): OpenAIPromptMessagesNode[] {
     const props0 = this.getFieldNodeProps("messages", { fieldArguments: args });
 
     return new sdk.Node(props0).getItemNodeProps({ fallbackLength: listFallbackLength }).map((props1) => {
@@ -385,7 +396,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3Etemperature})
    */
-  temperature({ args = {} }: { args?: Rec; } = {}): NullableFloatNode {
+  temperature({ args = {} }: { args?: EmptyObject; } = {}): NullableFloatNode {
     const props0 = this.getFieldNodeProps("temperature", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -405,7 +416,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3EtopP})
    */
-  topP({ args = {} }: { args?: Rec; } = {}): NullableFloatNode {
+  topP({ args = {} }: { args?: EmptyObject; } = {}): NullableFloatNode {
     const props0 = this.getFieldNodeProps("topP", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -425,7 +436,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3EtopLogprobs})
    */
-  topLogprobs({ args = {} }: { args?: Rec; } = {}): NullableFloatNode {
+  topLogprobs({ args = {} }: { args?: EmptyObject; } = {}): NullableFloatNode {
     const props0 = this.getFieldNodeProps("topLogprobs", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -445,7 +456,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3EpresencePenalty})
    */
-  presencePenalty({ args = {} }: { args?: Rec; } = {}): NullableFloatNode {
+  presencePenalty({ args = {} }: { args?: EmptyObject; } = {}): NullableFloatNode {
     const props0 = this.getFieldNodeProps("presencePenalty", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -465,7 +476,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3EmaxTokens})
    */
-  maxTokens({ args = {} }: { args?: Rec; } = {}): NullableFloatNode {
+  maxTokens({ args = {} }: { args?: EmptyObject; } = {}): NullableFloatNode {
     const props0 = this.getFieldNodeProps("maxTokens", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -485,7 +496,7 @@ export class OpenAIPromptNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt%3EmaxCompletionTokens})
    */
-  maxCompletionTokens({ args = {} }: { args?: Rec; } = {}): NullableFloatNode {
+  maxCompletionTokens({ args = {} }: { args?: EmptyObject; } = {}): NullableFloatNode {
     const props0 = this.getFieldNodeProps("maxCompletionTokens", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -514,14 +525,18 @@ export class AINode extends sdk.Node {
   override typeName = "AI" as const;
 
   get({ fallback = aIFallback as AI}: { fallback?: AI } = {}): AI {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "ai"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as AI;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EloadingMessage})
    */
-  loadingMessage({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  loadingMessage({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("loadingMessage", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -541,7 +556,7 @@ export class AINode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai%3EfeatureSuggestionPrompt})
    */
-  featureSuggestionPrompt({ args = {} }: { args?: Rec; } = {}): OpenAIPromptNode {
+  featureSuggestionPrompt({ args = {} }: { args?: EmptyObject; } = {}): OpenAIPromptNode {
     const props0 = this.getFieldNodeProps("featureSuggestionPrompt", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -601,14 +616,18 @@ export class LandingNode extends sdk.Node {
   override typeName = "Landing" as const;
 
   get({ fallback = landingFallback as Landing}: { fallback?: Landing } = {}): Landing {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "landing"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as Landing;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding%3Eheadline})
    */
-  headline({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  headline({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("headline", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -628,7 +647,7 @@ export class LandingNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding%3Elayout})
    */
-  layout({ args = {}, fallback, shouldReturnUnrecognizedValues = false }: { args?: Rec; fallback: Layout; shouldReturnUnrecognizedValues?: boolean; }): Layout {
+  layout({ args = {}, fallback, shouldReturnUnrecognizedValues = false }: { args?: EmptyObject; fallback: Layout; shouldReturnUnrecognizedValues?: boolean; }): Layout {
     const props0 = this.getFieldNodeProps("layout", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -648,16 +667,16 @@ export class LandingNode extends sdk.Node {
   }
 }
 
-export type Rec5 = {
+export type EventsPageViewArgs = {
   userAgent: string;
   href: string;
 }
 
-export type Rec6 = {
+export type EventsSignUpArgs = {
   userAgent: string;
 }
 
-export type Rec7 = {
+export type EventsUpgradeArgs = {
   userAgent: string;
   plan: PlanType;
 }
@@ -672,28 +691,28 @@ export type Events = {
 
 const eventsFallback = {thumbsDown:false,thumbsUp:false,pageView:false,signUp:false,upgrade:false};
 
-export type Rec9 = {
-  args: Rec5;
+export type GetEventsPageViewArgs = {
+  args: EventsPageViewArgs;
 }
 
-export type Rec10 = {
-  args: Rec6;
+export type GetEventsSignUpArgs = {
+  args: EventsSignUpArgs;
 }
 
-export type Rec11 = {
-  args: Rec7;
+export type GetEventsUpgradeArgs = {
+  args: EventsUpgradeArgs;
 }
 
-export type Rec8 = {
-  pageView: Rec9;
-  signUp: Rec10;
-  upgrade: Rec11;
+export type GetEventsArgs = {
+  pageView: GetEventsPageViewArgs;
+  signUp: GetEventsSignUpArgs;
+  upgrade: GetEventsUpgradeArgs;
 }
 
 export class EventsNode extends sdk.Node {
   override typeName = "Events" as const;
 
-  get({ args, fallback = eventsFallback as Events}: { args: Rec8; fallback?: Events }): Events {
+  get({ args, fallback = eventsFallback as Events}: { args: GetEventsArgs; fallback?: Events }): Events {
     const getQuery = sdk.mergeFieldQueryAndArgs(
       query.fragmentDefinitions,
       sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "events"]), 
@@ -705,7 +724,7 @@ export class EventsNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eevents%3EthumbsDown})
    */
-  thumbsDown({ args = {} }: { args?: Rec; } = {}): void {
+  thumbsDown({ args = {} }: { args?: EmptyObject; } = {}): void {
     const props0 = this.getFieldNodeProps("thumbsDown", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -725,7 +744,7 @@ export class EventsNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eevents%3EthumbsUp})
    */
-  thumbsUp({ args = {} }: { args?: Rec; } = {}): void {
+  thumbsUp({ args = {} }: { args?: EmptyObject; } = {}): void {
     const props0 = this.getFieldNodeProps("thumbsUp", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -745,7 +764,7 @@ export class EventsNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eevents%3EpageView})
    */
-  pageView({ args }: { args: Rec5; }): void {
+  pageView({ args }: { args: EventsPageViewArgs; }): void {
     const props0 = this.getFieldNodeProps("pageView", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -765,7 +784,7 @@ export class EventsNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eevents%3EsignUp})
    */
-  signUp({ args }: { args: Rec6; }): void {
+  signUp({ args }: { args: EventsSignUpArgs; }): void {
     const props0 = this.getFieldNodeProps("signUp", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -785,7 +804,7 @@ export class EventsNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eevents%3Eupgrade})
    */
-  upgrade({ args }: { args: Rec7; }): void {
+  upgrade({ args }: { args: EventsUpgradeArgs; }): void {
     const props0 = this.getFieldNodeProps("upgrade", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -803,7 +822,7 @@ export class EventsNode extends sdk.Node {
   }
 }
 
-export type Rec12 = {
+export type RootDiscountsArgs = {
   plan: PlanType;
   code: string;
 }
@@ -820,14 +839,18 @@ export class DiscountNode extends sdk.Node {
   override typeName = "Discount" as const;
 
   get({ fallback = discountFallback as Discount}: { fallback?: Discount } = {}): Discount {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "discounts"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as Discount;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22Discount%22%2C%22selectedChildName%22%3A%22name%22%7D})
    */
-  name({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  name({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("name", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -847,7 +870,7 @@ export class DiscountNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22Discount%22%2C%22selectedChildName%22%3A%22isEnabled%22%7D})
    */
-  isEnabled({ args = {}, fallback }: { args?: Rec; fallback: boolean; }): boolean {
+  isEnabled({ args = {}, fallback }: { args?: EmptyObject; fallback: boolean; }): boolean {
     const props0 = this.getFieldNodeProps("isEnabled", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -867,7 +890,7 @@ export class DiscountNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22Discount%22%2C%22selectedChildName%22%3A%22percentage%22%7D})
    */
-  percentage({ args = {}, fallback }: { args?: Rec; fallback: number; }): number {
+  percentage({ args = {}, fallback }: { args?: EmptyObject; fallback: number; }): number {
     const props0 = this.getFieldNodeProps("percentage", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -885,7 +908,11 @@ export class DiscountNode extends sdk.Node {
   }
 }
 
-export type Rec13 = {
+export type RootPriceArgs = {
+  plan: PlanType;
+}
+
+export type FeaturePlanDataArgs = {
   plan: PlanType;
 }
 
@@ -900,14 +927,18 @@ export class PlanDataNode extends sdk.Node {
   override typeName = "PlanData" as const;
 
   get({ fallback = planDataFallback as PlanData}: { fallback?: PlanData } = {}): PlanData {
-    const getQuery = null;
+    const getQuery = sdk.mergeFieldQueryAndArgs(
+      query.fragmentDefinitions,
+      sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "featureGrid", "FeatureGroup", "feature", "Feature", "planData"]), 
+      null,
+    );
     return this.getValue({ query: getQuery, fallback }) as PlanData;
   }
 
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3EfeatureGrid%3Efeature%3EplanData%3Eenabled})
    */
-  enabled({ args = {}, fallback }: { args?: Rec; fallback: boolean; }): boolean {
+  enabled({ args = {}, fallback }: { args?: EmptyObject; fallback: boolean; }): boolean {
     const props0 = this.getFieldNodeProps("enabled", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -927,7 +958,7 @@ export class PlanDataNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3EfeatureGrid%3Efeature%3EplanData%3Etext})
    */
-  text({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  text({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("text", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -952,18 +983,18 @@ export type Feature = {
 
 const featureFallback = {name:"",planData:{enabled:false,text:""}};
 
-export type Rec15 = {
-  args: Rec13;
+export type GetFeaturePlanDataArgs = {
+  args: FeaturePlanDataArgs;
 }
 
-export type Rec14 = {
-  planData: Rec15;
+export type GetFeatureArgs = {
+  planData: GetFeaturePlanDataArgs;
 }
 
 export class FeatureNode extends sdk.Node {
   override typeName = "Feature" as const;
 
-  get({ args, fallback = featureFallback as Feature}: { args: Rec14; fallback?: Feature }): Feature {
+  get({ args, fallback = featureFallback as Feature}: { args: GetFeatureArgs; fallback?: Feature }): Feature {
     const getQuery = sdk.mergeFieldQueryAndArgs(
       query.fragmentDefinitions,
       sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "featureGrid", "FeatureGroup", "feature"]), 
@@ -975,7 +1006,7 @@ export class FeatureNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22Feature%22%2C%22selectedChildName%22%3A%22name%22%7D})
    */
-  name({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  name({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("name", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -995,7 +1026,7 @@ export class FeatureNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22Feature%22%2C%22selectedChildName%22%3A%22planData%22%7D})
    */
-  planData({ args }: { args: Rec13; }): PlanDataNode {
+  planData({ args }: { args: FeaturePlanDataArgs; }): PlanDataNode {
     const props0 = this.getFieldNodeProps("planData", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -1020,18 +1051,18 @@ export type FeatureGroup = {
 
 const featureGroupFallback = {name:"",feature:[]};
 
-export type Rec17 = {
-  Feature: Rec14;
+export type GetFeatureGroupFeatureArgs = {
+  Feature: GetFeatureArgs;
 }
 
-export type Rec16 = {
-  feature: Rec17;
+export type GetFeatureGroupArgs = {
+  feature: GetFeatureGroupFeatureArgs;
 }
 
 export class FeatureGroupNode extends sdk.Node {
   override typeName = "FeatureGroup" as const;
 
-  get({ args, fallback = featureGroupFallback as FeatureGroup}: { args: Rec16; fallback?: FeatureGroup }): FeatureGroup {
+  get({ args, fallback = featureGroupFallback as FeatureGroup}: { args: GetFeatureGroupArgs; fallback?: FeatureGroup }): FeatureGroup {
     const getQuery = sdk.mergeFieldQueryAndArgs(
       query.fragmentDefinitions,
       sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root", "Root", "featureGrid"]), 
@@ -1043,7 +1074,7 @@ export class FeatureGroupNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22FeatureGroup%22%2C%22selectedChildName%22%3A%22name%22%7D})
    */
-  name({ args = {}, fallback }: { args?: Rec; fallback: string; }): string {
+  name({ args = {}, fallback }: { args?: EmptyObject; fallback: string; }): string {
     const props0 = this.getFieldNodeProps("name", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -1063,7 +1094,7 @@ export class FeatureGroupNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/schema?selected_schema_type=%7B%22type%22%3A%22object%22%2C%22name%22%3A%22FeatureGroup%22%2C%22selectedChildName%22%3A%22feature%22%7D})
    */
-  feature({ args = {}, listFallbackLength = 0 }: { args?: Rec; listFallbackLength?: number; } = {}): FeatureNode[] {
+  feature({ args = {}, listFallbackLength = 0 }: { args?: EmptyObject; listFallbackLength?: number; } = {}): FeatureNode[] {
     const props0 = this.getFieldNodeProps("feature", { fieldArguments: args });
 
     return new sdk.Node(props0).getItemNodeProps({ fallbackLength: listFallbackLength }).map((props1) => {
@@ -1085,33 +1116,41 @@ export class FeatureGroupNode extends sdk.Node {
 }
 
 export type Root = {
+  testFlag: boolean;
   ai: AI;
   landing: Landing;
   events: Events;
+  /**
+   * A list of discount objects that the marketing team can control.
+   */
   discounts: Discount[];
   price: number;
   featureGrid: FeatureGroup[];
 }
 
-const rootFallback = {ai:{loadingMessage:"",featureSuggestionPrompt:{model:"gpt_4o",messages:[],temperature:{value:0,isNull:false},topP:{value:0,isNull:false},topLogprobs:{value:0,isNull:false},presencePenalty:{value:0,isNull:false},maxTokens:{value:0,isNull:false},maxCompletionTokens:{value:0,isNull:false}}},landing:{headline:"",layout:"vertical"},events:{thumbsDown:false,thumbsUp:false,pageView:false,signUp:false,upgrade:false},discounts:[],price:0,featureGrid:[]};
+const rootFallback = {testFlag:false,ai:{loadingMessage:"",featureSuggestionPrompt:{model:"gpt_4o",messages:[],temperature:{value:0,isNull:false},topP:{value:0,isNull:false},topLogprobs:{value:0,isNull:false},presencePenalty:{value:0,isNull:false},maxTokens:{value:0,isNull:false},maxCompletionTokens:{value:0,isNull:false}}},landing:{headline:"",layout:"vertical"},events:{thumbsDown:false,thumbsUp:false,pageView:false,signUp:false,upgrade:false},discounts:[],price:0,featureGrid:[]};
 
-export type Rec19 = {
-  Events: Rec8;
+export type GetRootEventsArgs = {
+  Events: GetEventsArgs;
 }
 
-export type Rec20 = {
-  args: Rec12;
+export type GetRootDiscountsArgs = {
+  args: RootDiscountsArgs;
 }
 
-export type Rec21 = {
-  FeatureGroup: Rec16;
+export type GetRootPriceArgs = {
+  args: RootPriceArgs;
 }
 
-export type Rec18 = {
-  events: Rec19;
-  discounts: Rec20;
-  price: Rec15;
-  featureGrid: Rec21;
+export type GetRootFeatureGridArgs = {
+  FeatureGroup: GetFeatureGroupArgs;
+}
+
+export type GetRootArgs = {
+  events: GetRootEventsArgs;
+  discounts: GetRootDiscountsArgs;
+  price: GetRootPriceArgs;
+  featureGrid: GetRootFeatureGridArgs;
 }
 
 export class RootNode extends sdk.Node {
@@ -1122,7 +1161,7 @@ export class RootNode extends sdk.Node {
     return (step?.type === 'GetFieldStep' ? step.fieldArguments : {}) as RootArgs;
   }
 
-  get({ args, fallback = rootFallback as Root}: { args: Rec18; fallback?: Root }): Root {
+  get({ args, fallback = rootFallback as Root}: { args: GetRootArgs; fallback?: Root }): Root {
     const getQuery = sdk.mergeFieldQueryAndArgs(
       query.fragmentDefinitions,
       sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, ["Query", "root"]), 
@@ -1132,9 +1171,29 @@ export class RootNode extends sdk.Node {
   }
 
   /**
+   * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3EtestFlag})
+   */
+  testFlag({ args = {}, fallback }: { args?: EmptyObject; fallback: boolean; }): boolean {
+    const props0 = this.getFieldNodeProps("testFlag", { fieldArguments: args });
+    const expression0 = props0.expression;
+
+    if (
+      expression0 &&
+      expression0.type === "BooleanExpression"
+    ) {
+      const node = new sdk.BooleanNode(props0);
+      return node.get({ fallback });
+    }
+
+    const node = new sdk.BooleanNode(props0);
+    node._logUnexpectedTypeError();
+    return node.get({ fallback });
+  }
+
+  /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eai})
    */
-  ai({ args = {} }: { args?: Rec; } = {}): AINode {
+  ai({ args = {} }: { args?: EmptyObject; } = {}): AINode {
     const props0 = this.getFieldNodeProps("ai", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -1154,7 +1213,7 @@ export class RootNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Elanding})
    */
-  landing({ args = {} }: { args?: Rec; } = {}): LandingNode {
+  landing({ args = {} }: { args?: EmptyObject; } = {}): LandingNode {
     const props0 = this.getFieldNodeProps("landing", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -1174,7 +1233,7 @@ export class RootNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eevents})
    */
-  events({ args = {} }: { args?: Rec; } = {}): EventsNode {
+  events({ args = {} }: { args?: EmptyObject; } = {}): EventsNode {
     const props0 = this.getFieldNodeProps("events", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -1192,9 +1251,10 @@ export class RootNode extends sdk.Node {
   }
 
   /**
+   * A list of discount objects that the marketing team can control.
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Ediscounts})
    */
-  discounts({ args, listFallbackLength = 0 }: { args: Rec12; listFallbackLength?: number; }): DiscountNode[] {
+  discounts({ args, listFallbackLength = 0 }: { args: RootDiscountsArgs; listFallbackLength?: number; }): DiscountNode[] {
     const props0 = this.getFieldNodeProps("discounts", { fieldArguments: args });
 
     return new sdk.Node(props0).getItemNodeProps({ fallbackLength: listFallbackLength }).map((props1) => {
@@ -1217,7 +1277,7 @@ export class RootNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3Eprice})
    */
-  price({ args, fallback }: { args: Rec13; fallback: number; }): number {
+  price({ args, fallback }: { args: RootPriceArgs; fallback: number; }): number {
     const props0 = this.getFieldNodeProps("price", { fieldArguments: args });
     const expression0 = props0.expression;
 
@@ -1237,7 +1297,7 @@ export class RootNode extends sdk.Node {
   /**
    * [Open in Hypertune UI]({@link https://app.hypertune.com/projects/3652/main/draft/logic?selected_field_path=root%3EfeatureGrid})
    */
-  featureGrid({ args = {}, listFallbackLength = 0 }: { args?: Rec; listFallbackLength?: number; } = {}): FeatureGroupNode[] {
+  featureGrid({ args = {}, listFallbackLength = 0 }: { args?: EmptyObject; listFallbackLength?: number; } = {}): FeatureGroupNode[] {
     const props0 = this.getFieldNodeProps("featureGrid", { fieldArguments: args });
 
     return new sdk.Node(props0).getItemNodeProps({ fallbackLength: listFallbackLength }).map((props1) => {
@@ -1279,15 +1339,15 @@ export type Source = {
   root: Root;
 }
 
-const sourceFallback = {root:{ai:{loadingMessage:"",featureSuggestionPrompt:{model:"gpt_4o",messages:[],temperature:{value:0,isNull:false},topP:{value:0,isNull:false},topLogprobs:{value:0,isNull:false},presencePenalty:{value:0,isNull:false},maxTokens:{value:0,isNull:false},maxCompletionTokens:{value:0,isNull:false}}},landing:{headline:"",layout:"vertical"},events:{thumbsDown:false,thumbsUp:false,pageView:false,signUp:false,upgrade:false},discounts:[],price:0,featureGrid:[]}};
+const sourceFallback = {root:{testFlag:false,ai:{loadingMessage:"",featureSuggestionPrompt:{model:"gpt_4o",messages:[],temperature:{value:0,isNull:false},topP:{value:0,isNull:false},topLogprobs:{value:0,isNull:false},presencePenalty:{value:0,isNull:false},maxTokens:{value:0,isNull:false},maxCompletionTokens:{value:0,isNull:false}}},landing:{headline:"",layout:"vertical"},events:{thumbsDown:false,thumbsUp:false,pageView:false,signUp:false,upgrade:false},discounts:[],price:0,featureGrid:[]}};
 
-export type Rec23 = {
+export type GetQueryRootArgs = {
   args: RootArgs;
-  Root: Rec18;
+  Root: GetRootArgs;
 }
 
-export type Rec22 = {
-  root: Rec23;
+export type GetQueryArgs = {
+  root: GetQueryRootArgs;
 }
 
 /**
@@ -1304,7 +1364,7 @@ export type Rec22 = {
 export class SourceNode extends sdk.Node {
   override typeName = "Query" as const;
 
-  get({ args, fallback = sourceFallback as Source}: { args: Rec22; fallback?: Source }): Source {
+  get({ args, fallback = sourceFallback as Source}: { args: GetQueryArgs; fallback?: Source }): Source {
     const getQuery = sdk.mergeFieldQueryAndArgs(
       query.fragmentDefinitions,
       sdk.getFieldQueryForPath(query.fragmentDefinitions, query.fieldQuery, []), 
@@ -1337,29 +1397,38 @@ export class SourceNode extends sdk.Node {
   }
 }
 
-export type VariableValues = Rec;
 export type DehydratedState = sdk.DehydratedState<Source, VariableValues>
-export type CreateSourceOptions = { 
+
+const sources: { [key: string]: SourceNode } = {};
+
+export type CreateSourceOptions = {
   token: string; 
   variableValues?: VariableValues;
   override?: sdk.DeepPartial<Source> | null;
+  key?: string;
 } & sdk.CreateOptions
 
 export function createSource({
   token,
   variableValues = {},
   override,
+  key,
   ...options
 }: CreateSourceOptions): SourceNode {
-  return sdk.create({
-    NodeConstructor: SourceNode,
-    token,
-    query,
-    queryId,
-    variableValues,
-    override,
-    options,
-  });
+  const sourceKey =
+    key ?? (typeof window === "undefined" ? "server" : "client");
+
+  if (!sources[sourceKey]) {
+    sources[sourceKey] = sdk.create({
+      NodeConstructor: SourceNode,
+      token,
+      variableValues,
+      override,
+      options,
+    });
+  }
+
+  return sources[sourceKey];
 }
 
 export const emptySource = new SourceNode({
@@ -1368,18 +1437,22 @@ export const emptySource = new SourceNode({
   parent: null,
   step: null,
   expression: null,
+  initDataHash: null,
 });
 
 export function createSourceForServerOnly({
   token,
   variableValues = {},
   override,
+  key,
   ...options
 }: CreateSourceOptions): SourceNode {
   return typeof window === "undefined"
     ? createSource({ token, variableValues, override, ...options })
     : emptySource;
 }
+
+export const overrideCookieName = "hypertuneOverride";
 
 /**
  * @deprecated use createSource instead.

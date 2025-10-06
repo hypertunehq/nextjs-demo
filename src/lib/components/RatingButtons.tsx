@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { useHypertune } from "@/generated/hypertune.react";
-import Button from "@/lib/components/Button";
-import { ThumbsDown, ThumbsUp } from "@phosphor-icons/react";
-import { intentPrimaryHex } from "@/lib//constants";
+import { useHypertune } from '@/generated/hypertune.react'
+import Button from '@/lib/components/Button'
+import { ThumbsDown, ThumbsUp } from '@phosphor-icons/react'
+import { intentPrimaryHex } from '@/lib//constants'
 
 export default function RatingButtons() {
-  const hypertune = useHypertune();
+  const hypertune = useHypertune()
 
   return (
     <div className="flex flex-row items-center gap-2">
@@ -15,7 +15,7 @@ export default function RatingButtons() {
         intent="primary"
         weight="minimal"
         onClick={() => {
-          hypertune.events().thumbsDown();
+          hypertune.events().thumbsDown()
         }}
       />
       <Button
@@ -23,9 +23,9 @@ export default function RatingButtons() {
         intent="primary"
         weight="minimal"
         onClick={() => {
-          hypertune.events().thumbsUp();
+          hypertune.events().thumbsUp()
         }}
       />
     </div>
-  );
+  )
 }

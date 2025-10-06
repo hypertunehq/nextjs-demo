@@ -1,18 +1,22 @@
-"use client";
+'use client'
 
-import React from "react";
-import twMerge from "@/lib/twMerge";
+import React from 'react'
+import twMerge from '@/lib/twMerge'
 
 type ModalProps = {
-  open: boolean;
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-  primaryAction?: { label: string; onClick: () => void; disabled?: boolean };
-  secondaryAction?: { label: string; onClick: () => void };
-  onClose: () => void;
-  className?: string;
-};
+  open: boolean
+  title: string
+  description?: string
+  children: React.ReactNode
+  primaryAction?: {
+    label: string
+    onClick: () => void
+    disabled?: boolean
+  }
+  secondaryAction?: { label: string; onClick: () => void }
+  onClose: () => void
+  className?: string
+}
 
 export default function Modal({
   open,
@@ -24,7 +28,7 @@ export default function Modal({
   onClose,
   className,
 }: ModalProps): React.ReactElement | null {
-  if (!open) return null;
+  if (!open) return null
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -37,8 +41,8 @@ export default function Modal({
         role="dialog"
         aria-modal="true"
         className={twMerge(
-          "relative z-10 w-full max-w-md rounded-lg border border-bd-darker bg-white p-4 shadow-lg dark:border-gray-800 dark:bg-gray-900",
-          className ?? "",
+          'dark:border-gray-800 dark:bg-gray-900 relative z-10 w-full max-w-md rounded-lg border border-bd-darker bg-white p-4 shadow-lg',
+          className ?? ''
         )}
       >
         <div className="mb-3">
@@ -65,8 +69,8 @@ export default function Modal({
               type="button"
               disabled={primaryAction.disabled}
               className={twMerge(
-                "rounded-md bg-intent-primary px-3 py-2 text-sm font-medium text-white",
-                primaryAction.disabled ? "opacity-50" : "",
+                'rounded-md bg-intent-primary px-3 py-2 text-sm font-medium text-white',
+                primaryAction.disabled ? 'opacity-50' : ''
               )}
               onClick={primaryAction.onClick}
             >
@@ -76,7 +80,5 @@ export default function Modal({
         </div>
       </div>
     </div>
-  );
+  )
 }
-
-

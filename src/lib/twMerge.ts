@@ -1,5 +1,5 @@
-import { extendTailwindMerge } from "tailwind-merge";
-import tailwindConfig from "../../tailwind.config";
+import { extendTailwindMerge } from 'tailwind-merge'
+import tailwindConfig from '../../tailwind.config'
 
 export default extendTailwindMerge({
   override: {
@@ -11,12 +11,16 @@ export default extendTailwindMerge({
           ),
         },
       ],
-      "font-size": [
-        { text: Object.keys(tailwindConfig.theme?.fontSize ?? {}) },
+      'font-size': [
+        {
+          text: Object.keys(tailwindConfig.theme?.fontSize ?? {}),
+        },
       ],
-      "font-weight": [
-        { font: Object.keys(tailwindConfig.theme?.fontWeight ?? {}) },
+      'font-weight': [
+        {
+          font: Object.keys(tailwindConfig.theme?.fontWeight ?? {}),
+        },
       ],
     },
   },
-});
+})

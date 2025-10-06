@@ -1,50 +1,66 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import Button from "@/lib/components/Button";
+import { useEffect, useState } from 'react'
+import Button from '@/lib/components/Button'
 
 type ChecklistItem = {
-  id: string;
-  label: string;
-  completed: boolean;
-};
+  id: string
+  label: string
+  completed: boolean
+}
 
-const STORAGE_KEY = "onboarding_checklist";
+const STORAGE_KEY = 'onboarding_checklist'
 
 export default function OnboardingChecklist(): React.ReactElement | null {
   const [items, setItems] = useState<ChecklistItem[]>([
-    { id: "create_project", label: "Create your first project", completed: false },
-    { id: "invite_teammate", label: "Invite a teammate", completed: false },
-    { id: "explore_plans", label: "Explore plans & features", completed: false },
-    { id: "get_ai_tip", label: "Get an AI recommendation", completed: false },
-  ]);
+    {
+      id: 'create_project',
+      label: 'Create your first project',
+      completed: false,
+    },
+    {
+      id: 'invite_teammate',
+      label: 'Invite a teammate',
+      completed: false,
+    },
+    {
+      id: 'explore_plans',
+      label: 'Explore plans & features',
+      completed: false,
+    },
+    {
+      id: 'get_ai_tip',
+      label: 'Get an AI recommendation',
+      completed: false,
+    },
+  ])
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = localStorage.getItem(STORAGE_KEY)
       if (raw) {
-        const parsed = JSON.parse(raw) as ChecklistItem[];
+        const parsed = JSON.parse(raw) as ChecklistItem[]
         setItems((prev) =>
           prev.map((p) => parsed.find((x) => x.id === p.id) ?? p)
-        );
+        )
       }
     } catch {
       // ignore
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
     } catch {
       // ignore
     }
-  }, [items]);
+  }, [items])
 
-  const allDone = items.every((i) => i.completed);
+  const allDone = items.every((i) => i.completed)
 
   return (
-    <div className="w-full rounded-lg border border-bd-darker bg-white p-4 text-tx-default dark:border-gray-800 dark:bg-gray-900">
+    <div className="dark:border-gray-800 dark:bg-gray-900 w-full rounded-lg border border-bd-darker bg-white p-4 text-tx-default">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-h4 font-semibold">Onboarding checklist</h2>
         {allDone && (
@@ -67,24 +83,28 @@ export default function OnboardingChecklist(): React.ReactElement | null {
                   )
                 }
               />
-              <span className={item.completed ? "line-through text-tx-muted" : ""}>{item.label}</span>
+              <span
+                className={item.completed ? 'text-tx-muted line-through' : ''}
+              >
+                {item.label}
+              </span>
             </label>
-            {item.id === "create_project" && (
+            {item.id === 'create_project' && (
               <a href="/app/projects" className="shrink-0">
                 <Button intent="primary" text="Open" size="small" />
               </a>
             )}
-            {item.id === "invite_teammate" && (
+            {item.id === 'invite_teammate' && (
               <a href="/app/team" className="shrink-0">
                 <Button intent="primary" text="Open" size="small" />
               </a>
             )}
-            {item.id === "explore_plans" && (
+            {item.id === 'explore_plans' && (
               <a href="/app/plans" className="shrink-0">
                 <Button intent="primary" text="Open" size="small" />
               </a>
             )}
-            {item.id === "get_ai_tip" && (
+            {item.id === 'get_ai_tip' && (
               <a href="/app" className="shrink-0">
                 <Button intent="primary" text="Open" size="small" />
               </a>
@@ -93,7 +113,5 @@ export default function OnboardingChecklist(): React.ReactElement | null {
         ))}
       </ul>
     </div>
-  );
+  )
 }
-
-
