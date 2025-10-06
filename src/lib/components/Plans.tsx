@@ -83,7 +83,7 @@ function PlanHeader({
 }): React.ReactElement | null {
   const hypertune = useHypertune()
   const code =
-    typeof window !== undefined
+    typeof window !== 'undefined'
       ? (new URL(window.location.href).searchParams.get('code') ?? '')
       : ''
 
@@ -182,7 +182,7 @@ function FeatureGroupHeaderRow({
       />
       {PlanTypeEnumValues.map((planName) => (
         <Cell
-          key={`header-${name}`}
+          key={`header-${name}-${planName}`}
           isCurrent={planName === currentPlan}
           className={twMerge('border-b-0', className)}
           wrapperClassName={cellWrapperClassName}

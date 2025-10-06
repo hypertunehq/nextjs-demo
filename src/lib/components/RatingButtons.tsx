@@ -9,7 +9,7 @@ export default function RatingButtons() {
   const hypertune = useHypertune()
 
   return (
-    <div className="flex flex-row items-center gap-2">
+    <div className="mt-4 flex flex-row items-center gap-2">
       <Button
         icon={<ThumbsDown color={intentPrimaryHex} />}
         intent="primary"

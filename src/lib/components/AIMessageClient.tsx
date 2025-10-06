@@ -46,8 +46,10 @@ export default function AIMessageClient() {
 
   return (
     <>
-      <p>{error ? error : message || loadingText}</p>
-      {!isLoading && !error && message && <RatingButtons />}
+      <div className="p-2">
+        {error ? error : message || loadingText}
+        {!isLoading && !error && message && <RatingButtons />}
+      </div>
     </>
   )
 }

@@ -11,6 +11,7 @@ export default function AIMessageLauncher() {
     <div className="flex w-full flex-col items-start gap-2">
       {!showAI && (
         <Button
+          className="p-2"
           intent="primary"
           text="Get your latest AI recommendation on how to make the most of your Potion workspace"
           onClick={() => setShowAI(true)}
