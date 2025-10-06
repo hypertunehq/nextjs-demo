@@ -4,6 +4,7 @@ import {
   Desktop,
   IconContext,
   IconProps,
+  Folder,
   PaperPlaneTilt,
   User,
 } from "@phosphor-icons/react";
@@ -17,6 +18,11 @@ const routes: SidebarItemProps[] = [
     name: "Home",
     icon: <Desktop />,
     href: "/app",
+  },
+  {
+    name: "Projects",
+    icon: <Folder />,
+    href: "/app/projects",
   },
   {
     name: "Team",
@@ -64,7 +70,7 @@ function SidebarItem({
   return (
     <Link
       className={twMerge(
-        "flex flex-row items-center gap-2 rounded-lg p-2 hover:bg-bg-hover",
+        "flex flex-row items-center gap-2 rounded-lg p-2 text-h5 hover:bg-bg-hover",
         isSelected &&
           "bg-intent-primary/5 text-intent-primary hover:bg-bg-hover/10",
       )}

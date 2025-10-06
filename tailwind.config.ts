@@ -16,7 +16,7 @@ const config: Config = {
         warning: { DEFAULT: "#ee954c", 10: "#FDF4ED" },
         danger: { DEFAULT: "#ed544b", "05": "#FEF6F6" },
         success: { DEFAULT: "#3b9e62", "05": "#F5FAF7" },
-        primary: { DEFAULT: "#5b67e7", "05": "#F6F7FD" },
+        primary: { DEFAULT: "#3B82F6", "05": "#F6F7FD" },
       },
       // Text
       tx: {
@@ -37,7 +37,7 @@ const config: Config = {
         medium: "#f9f9fb",
         hover: "#eaecf1",
         pressed: "#eaecf180",
-        primary: "#5B67E71A",
+        primary: "#3B82F61A",
         blurred: "rgba(0, 0, 0, 0.5)",
       },
     },

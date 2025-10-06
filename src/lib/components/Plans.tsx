@@ -17,7 +17,7 @@ export default function Plans(): React.ReactElement | null {
     <div className="grid min-w-[675px] grid-cols-9">
       <RowName
         name="Plans"
-        className="flex-col items-start px-[30px] pt-4 text-h2 font-semibold text-tx-default"
+        className="flex-col items-start px-[30px] pt-4 text-h1 font-semibold text-tx-default"
         wrapperClassName="px-0"
       />
       {PlanTypeEnumValues.map((plan) => (

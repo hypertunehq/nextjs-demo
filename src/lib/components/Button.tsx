@@ -95,7 +95,7 @@ function sizeToClassName(size: Size): string {
     case "x-small":
       return "h-[20px] px-[3px] py-[4px] rounded-md";
     case "small":
-      return "h-[26px] px-[5px] py-[7px] rounded-lg ";
+      return "h-[26px] px-[10px] py-[7px] rounded-lg ";
     case "large":
       return "h-[32px] px-[8px] py-[8px] rounded-lg";
     case "x-large":
