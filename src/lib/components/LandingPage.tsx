@@ -6,7 +6,7 @@ import { Flask } from '@phosphor-icons/react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
-export default function Landing(): React.ReactElement {
+export default function LandingPage(): React.ReactElement {
   const hypertune = useHypertune()
   const isReady = hypertune.isReady()
   const pathname = usePathname()
